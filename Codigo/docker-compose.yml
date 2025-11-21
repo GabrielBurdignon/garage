@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: gm_postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: garage_manager
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d garage_manager"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  
+  # backend:
+  #   build: 
+  #     context: ./backend/project
+  #     dockerfile: Dockerfile
+  #   container_name: gm_backend
+  #   image: tiagosantos1812/project
+  #   ports:
+  #     - "8080:8080"
+  #   environment:
+  #     SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/garage_manager
+  #     SPRING_DATASOURCE_USERNAME: postgres
+  #     SPRING_DATASOURCE_PASSWORD: postgres
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+
+volumes:
+  pgdata:

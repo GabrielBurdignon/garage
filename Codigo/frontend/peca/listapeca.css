@@ -1,0 +1,250 @@
+/* === Fundo igual ao da página Oficina - Home === */
+:root {
+  --bg1: #0b0f0d;
+  --bg2: #0e1412;
+  --ac1: #16a34a;
+  --ac2: #10b981;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 10% 10%, #0f2018 0%, #0a0f0d 60%),
+              linear-gradient(135deg, var(--bg1), var(--bg2));
+  color: #e5e7eb;
+  font-family: "Poppins", system-ui, Segoe UI, Roboto, Helvetica, Arial;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Blobs decorativos (mesmos da Oficina - Home) */
+.blob {
+  position: fixed;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: .45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob.a {
+  background: radial-gradient(circle at 30% 30%, var(--ac1), transparent 60%);
+  top: -140px;
+  left: -140px;
+}
+
+.blob.b {
+  background: radial-gradient(circle at 70% 70%, var(--ac2), transparent 60%);
+  bottom: -160px;
+  right: -160px;
+}
+
+
+/* Container principal */
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Cabeçalho */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.topo h1 {
+  font-size: 1.8rem;
+  color: var(--cor-texto-principal);
+}
+
+.btn-adicionar {
+  background-color: var(--cor-btn-salvar);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s ease;
+  text-decoration: none;
+  background-color: #0e9f70;
+}
+
+.btn-adicionar:hover {
+  background-color: #0c7a57;
+}
+
+/* === Tabela === */
+.tabela-container {
+  overflow-x: auto;
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.tabela-pecas {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--txt);
+  background: rgba(22, 163, 74, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.tabela-pecas thead {
+  background: linear-gradient(90deg, var(--ac1), var(--ac2));
+  color: #fff;
+}
+
+.tabela-pecas th,
+.tabela-pecas td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+}
+
+.tabela-pecas th {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.tabela-pecas tbody tr {
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.tabela-pecas tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Células das ações */
+.acoes {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.btn-acao {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-mais {
+  background: var(--ac1);
+  color: #fff;
+}
+.btn-mais:hover {
+  background: var(--ac2);
+}
+
+.btn-menos {
+  background: var(--err);
+  color: #fff;
+}
+.btn-menos:hover {
+  background: #b91c1c;
+}
+
+.btn-editar {
+  background: var(--warn);
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
+.btn-editar:hover {
+  background: #d97706;
+}
+
+/* Ações */
+.acoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-acao {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.btn-mais {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-mais:hover {
+  background-color: #1e4db7;
+}
+
+.btn-menos {
+  background-color: #dc2626;
+  color: white;
+}
+
+.btn-menos:hover {
+  background-color: #a31b1b;
+}
+
+.btn-editar {
+  background-color: #f59e0b;
+  color: black;
+  font-weight: 600;
+}
+
+.btn-editar:hover {
+  background-color: #d97706;
+}
+
+/* Topbar */
+.topbar{
+  position:sticky;
+  top:0;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:space-between;
+  padding:12px 18px;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(12,18,15,.65), rgba(12,18,15,.35));
+  border-bottom:1px solid var(--border);
+  z-index:5;
+}
+.brand{display:flex; align-items:center; gap:12px}
+.logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--ac1),var(--ac2))}
+.title{margin:0; font-size:18px}
+
+/* Menu e login */
+.menu{display:flex; gap:10px; align-items:center}
+.menu a{ text-decoration:none }
+.login{display:flex; align-items:center}
+
+/* Botões gerais */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  border-radius:12px; padding:9px 12px;
+  border:1px solid var(--border);
+  background: var(--panel);
+  color:var(--txt); cursor:pointer;
+  transition:.18s ease;
+  font-size:14px;
+}
+.btn:hover{transform:translateY(-1px); opacity:.96}
+.btn.primary{background:linear-gradient(135deg,var(--ac1),var(--ac2)); border-color:transparent; color:#fff}
+.btn.ghost{background: var(--panel); color:var(--txt); border:1px solid var(--border)}
+/* alias que foi usada no HTML */
+.btn.filled{background:linear-gradient(135deg,var(--ac1),var(--ac2)); border-color:transparent; color:#fff}

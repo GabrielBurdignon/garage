@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Oficina - Home</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <!-- Efeitos visuais -->
+  <div class="blob a"></div>
+  <div class="blob b"></div>
+
+  <div class="wrap">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <h1 class="title">Só Polimento</h1>
+      </div>
+
+      <nav class="menu">
+        <a href="../homepage/index.html" class="btn ghost">Home</a>
+        <a href="../peca/listaPeca.html" class="btn ghost">Inventário</a>
+        <a href="../service/servico.html" class="btn ghost">Serviços</a>
+        <a href="../descarte/descarte.html" class="btn ghost">Descarte</a>
+      </nav>
+
+      <div class="login">
+        <a href="../login_usuario/login.html" class="btn ghost">Login</a>
+      </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+      <!-- Grid com 3 colunas -->
+      <main class="grid-tres-colunas">
+        
+        <!-- Coluna 1: Serviços em Andamento -->
+        <section class="card-secao">
+          <div class="secao-header">
+            <h2>🔧 Em Andamento</h2>
+            <span class="badge" id="badge-andamento">0</span>
+          </div>
+          <ul id="lista-servicos-andamento" class="servicos-lista">
+            <li class="servico-item loading">Carregando...</li>
+          </ul>
+        </section>
+
+        <!-- Coluna 2: Serviços Prontos -->
+        <section class="card-secao prontos">
+          <div class="secao-header">
+            <h2>✓ Prontos</h2>
+            <span class="badge badge-success" id="badge-prontos">0</span>
+          </div>
+          <ul id="lista-servicos-prontos" class="servicos-lista">
+            <li class="servico-item loading">Carregando...</li>
+          </ul>
+        </section>
+
+        <!-- Coluna 3: Descarte -->
+        <section class="card-secao card-descarte">
+          <div class="secao-header">
+            <h2>🗑️ Descarte</h2>
+          </div>
+
+          <div class="cacamba">
+            <div class="imagem-cacamba">
+              <div class="lixo"></div>
+              <img src="IMG/cacamba1.png" alt="Caçamba" class="imagem-cacamba-img">
+            </div>
+
+            <div class="progresso-container">
+              <div id="barraProgresso" class="progresso-barra"></div>
+            </div>
+          </div>
+
+          <div class="hint">Capacidade máxima: 50kg</div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <div class="rodape-coluna">
+        <h3>Só Polimento</h3>
+        <p>Gerencie serviços, controle o inventário e acompanhe o descarte com facilidade.</p>
+      </div>
+
+      <div class="rodape-coluna">
+        <h4>Links úteis</h4>
+        <ul>
+          <li><a href="../homepage/index.html">Home</a></li>
+          <li><a href="../peca/listaPeca.html">Inventário</a></li>
+          <li><a href="../service/servico.html">Serviços</a></li>
+          <li><a href="../descarte/descarte.html">Descarte</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape-coluna">
+        <h4>Contato</h4>
+        <p>Email: marquinhofurreka@gmail.com</p>
+        <p>Telefone: (31) 98564-5712</p>
+      </div>
+    </div>
+
+    <div class="rodape-base">
+      <p>© 2025 Só Polimento. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Modal de Confirmação -->
+<div id="modal-confirmacao" class="modal-overlay hidden">
+  <div class="modal">
+    <h3 id="modal-titulo">Confirmar ação</h3>
+    <p id="modal-mensagem">Tem certeza?</p>
+
+    <div class="modal-botoes">
+      <button id="modal-cancelar" class="btn-cancelar">Cancelar</button>
+      <button id="modal-confirmar" class="btn-confirmar">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s ease;
+  z-index: 999;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  font-family: sans-serif;
+  animation: pop .25s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-botoes {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-confirmar {
+  padding: 8px 16px;
+  background: #4caf50;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-cancelar {
+  padding: 8px 16px;
+  background: #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hidden { display: none; }
+</style>
+
+  <!-- Scripts -->
+  <script src="cacamba.js"></script>
+  <script src="../service/servico.js"></script>
+  <script src="../descarte/descarte.js"></script>
+</body>
+</html>

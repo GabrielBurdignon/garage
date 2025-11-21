@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Descarte - Garagemanager</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ======== ESTILO MELHORADO DA PÁGINA DESCARTE ======== */
+
+    .servicos-lista {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .servicos-lista li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 15px;
+      color: var(--txt);
+      transition: 0.2s ease;
+    }
+
+    .servicos-lista li:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .servicos-lista .botao-remover {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--err);
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .servicos-lista .botao-remover:hover {
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    .progresso-container {
+      margin-top: 25px;
+      width: 100%;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progresso-barra {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(135deg, var(--ac1), var(--ac2));
+      border-radius: 10px;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .hint {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ===== BOTÃO SOLICITAR COLETA ===== */
+    .btn-solicitar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      margin: 30px auto 0 auto;
+      padding: 12px 26px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--ac1), var(--ac2));
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-solicitar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .btn-solicitar {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+ <!-- Efeitos visuais -->
+<div class="blob a"></div>
+<div class="blob b"></div>
+
+<div class="wrap">
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo"></div>
+      <h1 class="title">Só Polimento</h1>
+    </div>
+
+    <nav class="menu">
+      <a href="../homepage/index.html" class="btn ghost">Home</a>
+      <a href="../peca/listaPeca.html" class="btn ghost">Inventário</a>
+      <a href="../service/servico.html" class="btn ghost">Serviços</a>
+      <a href="../descarte/descarte.html" class="btn ghost">Descarte</a>
+    </nav>
+
+    <div class="login">
+      <a href="../login_usuario/login.html" class="btn ghost">Login</a>
+    </div>
+  </div>
+
+  <!-- Conteúdo -->
+  <main class="container">
+    <div class="card">
+      <div class="hd">
+        <h2>Produtos para Descarte</h2>
+      </div>
+      <div class="bd">
+        <ul id="listaDescarte" class="servicos-lista"></ul>
+
+        <!-- Barra de progresso -->
+        <div class="progresso-container">
+          <div id="barraProgresso" class="progresso-barra"></div>
+        </div>
+
+        <div class="hint">Capacidade máxima da caçamba: 50kg</div>
+
+        <!-- Botão centralizado -->
+        <button id="btnSolicitar" class="btn-solicitar">
+          🚛 Solicitar Coleta
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <div class="rodape-coluna">
+        <h3>Garagemanager</h3>
+        <p>Sistema inteligente para controle e descarte sustentável de resíduos automotivos.</p>
+      </div>
+      <div class="rodape-coluna">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="../service/servico.html">Serviços</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape-base">
+      © 2025 Garagemanager — Todos os direitos reservados.
+    </div>
+  </footer>
+</div>
+
+<script src="descarte.js"></script>
+</body>
+</html>

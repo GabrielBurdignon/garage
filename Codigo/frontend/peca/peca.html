@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Codigo/frontend/styles.css">
+    <link rel="stylesheet" href="peca.css">
+    <title>Cadastro de Peça</title>
+</head>
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <section class="navbar">
+        <button onclick="irParaListaPeca()" class="btn-voltar">← Voltar</button>
+
+        <div class="conteudo">
+            <img src="imgs/peca.png" alt="Ícone Peça" class="icone icone1">
+            <div class="textos">
+                <h1>Cadastrar peça</h1>
+                <p>Inclua itens no estoque com unidade, valores e localização.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CARD 1 ================= -->
+    <section class="card card1">
+        <div class="form-group">
+            <label for="nomePeca">Nome da peça *</label>
+            <input type="text" id="nomePeca" placeholder="Ex: Filtro de óleo">
+        </div>
+
+        <div class="form-group">
+            <label for="sku">SKU / Código interno</label>
+            <input type="text" id="sku" placeholder="Ex: GM-FILT-001">
+        </div>
+
+        <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <input type="text" id="categoria" placeholder="Ex: Filtros">
+        </div>
+
+        <div class="form-group">
+            <label for="fornecedor">Fornecedor</label>
+            <input type="text" id="fornecedor" placeholder="Ex: AutoParts LTDA">
+        </div>
+
+        <div class="form-group">
+            <label for="localizacao">Localização (prateleira/box)</label>
+            <input type="text" id="localizacao" placeholder="Ex: A-03">
+        </div>
+
+        <div class="form-group tipo">
+            <label>Tipo *</label>
+            <div class="opcoes-tipo">
+                <button type="button"><img src="imgs/unidade-branco.png" alt="Ícone Unidade"
+                        class="icone">Unidade</button>
+                <button type="button"><img src="imgs/caixa-branco.png" alt="Ícone Caixa" class="icone">Caixa</button>
+                <button type="button"><img src="imgs/litro-branco.png" alt="Ícone Litro" class="icone">Litro</button>
+                <button type="button"><img src="imgs/vidro-branco.png" alt="Ícone Vidro" class="icone">Vidro</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CARD 2 ================= -->
+    <section class="card card2">
+        <div class="grid-card2">
+            <div class="form-group">
+                <label for="quantidade">Quantidade (unidades) *</label>
+                <input type="number" id="quantidade" placeholder="0">
+            </div>
+
+            <div class="form-group">
+                <label for="peso">Peso (Kg) *</label>
+                <input type="number" id="peso" placeholder="0">
+            </div>
+
+            <div class="form-group">
+                <label for="estoqueMin">Estoque mínimo *</label>
+                <input type="number" id="estoqueMin" placeholder="0">
+            </div>
+
+            <div class="form-group">
+                <label for="precoCusto">Preço de custo</label>
+                <input type="text" step="0.01" id="precoCusto" placeholder="R$ 0,00">
+            </div>
+            
+            <div class="form-group">
+                <label for="precoVenda">Preço de venda</label>
+                <input type="text" step="0.01" id="precoVenda" placeholder="R$ 0,00">
+            </div>
+
+            <div class="form-group full-width">
+                <label for="codigoBarras">Código de barras</label>
+                <input type="text" id="codigoBarras" placeholder="EAN/UPC (opcional)">
+            </div>
+
+            <div class="form-group full-width">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes"
+                    placeholder="Ex: Compatível com modelos 2012-2016, armazenar em local seco."></textarea>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= REVISÃO (com botões) ================= -->
+    <section class="revisao card">
+        <h2>Revisão</h2>
+        <ul>
+            <li><strong>Nome:</strong> —</li>
+            <li><strong>SKU:</strong> —</li>
+            <li><strong>Tipo:</strong> —</li>
+            <li><strong>Qtd.:</strong> 0</li>
+            <li><strong>Mínimo:</strong> 0</li>
+            <li><strong>Localização:</strong> —</li>
+            <li><strong>Fornecedor:</strong> —</li>
+            <li><strong>Preço custo:</strong> —</li>
+            <li><strong>Preço venda:</strong> —</li>
+        </ul>
+        
+        <p class="dica">Dica: defina o <em>estoque mínimo</em> para receber alertas automáticos de reposição.</p>
+
+        <!-- BOTÕES -->
+        <div class="botoes">
+            <button class="btn-principal"><img src="imgs/salvar.png" alt="Ícone Salvar" class="icone">Salvar peça</button>
+            <button class="btn-limpar">Limpar</button>
+        </div>
+    </section>
+</body>
+
+<script src="peca.js"></script>
+
+</html>

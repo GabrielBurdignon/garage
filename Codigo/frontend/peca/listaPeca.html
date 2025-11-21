@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Peças</title>
+    <link rel="stylesheet" href="listaPeca.css">
+     <link rel="stylesheet" href="../styles.css">
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+  <!-- Efeitos visuais -->
+  <div class="blob a"></div>
+  <div class="blob b"></div>
+
+  <div class="wrap">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <h1 class="title">Só Polimento</h1>
+      </div>
+
+      <nav class="menu">
+        <a href="../homepage/index.html" class="btn ghost">Home</a>
+        <a href="../peca/listaPeca.html" class="btn ghost">Inventário</a>
+        <a href="../service/servico.html" class="btn ghost">Serviços</a>
+        <a href="../descarte/descarte.html" class="btn ghost">Descarte</a>
+
+      </nav>
+
+      <div class="login">
+        <a href="../login_usuario/login.html" class="btn ghost">Login</a>
+      </div>
+    </div>
+
+
+    <main class="container">
+
+      <header class="topo">
+        <h1>Peças Cadastradas</h1>
+        <a href="peca.html" class="btn-adicionar">+ Nova Peça</a>
+      </header>
+
+        <section class="tabela-container">
+            <table class="tabela-pecas">
+                <thead>
+                    <tr>
+                        <th>Nome da Peça</th>
+                        <th>Quantidade</th>
+                        <th>Estoque Mínimo</th>
+                        <th>SKU</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-pecas">
+                    <!-- As peças são carregadas aqui pelo listaPeca.js -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+<script src="listaPeca.js"></script>
+
+</html>

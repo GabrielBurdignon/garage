@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fornecedores • Seu Projeto</title>
+    <link rel="stylesheet" href="fornecedor.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="blob a"></div>
+    <div class="blob b"></div>
+
+    <div class="wrap">
+        <header class="topbar">
+            <div class="brand">
+                <div class="logo"></div>
+                <h1 class="title">Garage Manager</h1>
+            </div>
+            <div class="actions-top">
+                <button class="btn" onclick="voltarDashboard()">← Voltar ao Dashboard</button>
+                <button class="btn primary" id="btnNovoFornecedor">+ Novo Fornecedor</button>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="card">
+                <div class="hd">
+                    <h2>Lista de Fornecedores</h2>
+                </div>
+                <div class="bd">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Tipo de Material</th>
+                                <th>Email</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fornecedoresLista"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal-overlay" id="modalCadastro">
+        <div class="modal">
+            <div class="hd">
+                <h3 style="margin:0;color:var(--muted);font-weight:500">Cadastrar Fornecedor</h3>
+                <button class="btn ghost" id="fecharModal">✕</button>
+            </div>
+            <div class="bd">
+                <form id="formFornecedor">
+                    <div class="grid">
+                        <div class="field">
+                            <label for="nome">Nome da empresa</label>
+                            <input class="input" id="nome" name="nome" type="text" placeholder="Ex.: TechParts Ltda"
+                                minlength="3" required>
+                        </div>
+                        <div class="field">
+                            <label for="cnpj">CNPJ</label>
+                            <input class="input" id="cnpj" name="cnpj" maxlength="18" placeholder="00.000.000/0000-00"
+                                required>
+                        </div>
+                        <div class="field">
+                            <label for="email">E-mail</label>
+                            <input class="input" id="email" name="email" type="email"
+                                placeholder="contato@fornecedor.com" required>
+                        </div>
+                        <div class="field">
+                            <label for="tipoMaterial">Tipo de Material</label>
+                            <select id="tipoMaterial" name="tipoMaterial" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="PECAS">Peças</option>
+                                <option value="FERRAMENTAS">Ferramentas</option>
+                                <option value="LUBRIFICANTES">Lubrificantes</option>
+                                <option value="PNEUS">Pneus</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid" style="margin-top:14px">
+                        <div class="field">
+                            <label for="endereco">Endereço</label>
+                            <input class="input" id="endereco" name="endereco" type="text"
+                                placeholder="Rua, número, bairro, cidade - UF">
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn primary" type="submit">Salvar</button>
+                        <button class="btn ghost" type="reset">Limpar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CONFIRMAÇÃO -->
+    <div class="modal-overlay" id="modalConfirmacao">
+        <div class="modal">
+            <div class="hd">
+                <h3 style="margin:0;color:var(--muted);font-weight:500">Sucesso!</h3>
+                <button class="btn ghost" id="fecharConfirmacao">✕</button>
+            </div>
+            <div class="bd" style="text-align:center; padding: 20px;">
+                ✅ Fornecedor criado com sucesso!
+            </div>
+            <div class="actions" style="justify-content:center; margin-bottom:15px;">
+                <button class="btn primary" id="okConfirmacao">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="fornecedor.js"></script>
+
+</body>
+
+</html>
